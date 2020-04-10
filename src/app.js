@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 const db = mongoose.connect('mongodb://localhost/APIPlayer', { useUnifiedTopology: true , useNewUrlParser: true});
 const Player = require('./models/playerModel');
+const plrRoute = require('./routes/playerRoute')(Player);
 
 const port = process.env.PORT || 3000;
 
@@ -13,7 +14,7 @@ app.get('/', (req, res) => {
 
 const test = express.Router();
 
-test.route('/test')
+test.route('/players')
     .get((req, res) => {
     Player.find((err, data) => {
         if (err){
@@ -28,6 +29,8 @@ test.route('/test')
 
 
 app.use('/api', test);
+app.use('/api', plrRoute);
+
 app.listen(port, () => {
     console.log("Running at port: " + port);
 })
