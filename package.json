@@ -1,13 +1,13 @@
 {
   "name": "project",
   "version": "1.0.0",
-  "description": "Node exercise to trainning REST concepts using MongoDB and Express",
+  "description": "Node exercise to training REST concepts using MongoDB and Express",
   "main": "./src/app.js",
   "scripts": {
     "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Ricardo Vieira",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
